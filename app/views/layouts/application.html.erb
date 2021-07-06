@@ -21,6 +21,11 @@
         </ul>
       </nav>
     </header>
+    <% if flash.present? %>
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: key) %>
+      <% end %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

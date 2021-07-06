@@ -70,3 +70,18 @@ header {
     }
   }
 }
+
+/*=== Flash ===*/
+.notice {
+  background: #28a745;
+  color: #fff;
+  margin:0;
+  text-align: center;
+}
+.alert {
+  background:#dc3545;
+  color: #fff;
+  margin: 0;
+  border-radius: 0;
+  text-align: center;
+}
