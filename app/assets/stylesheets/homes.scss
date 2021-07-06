@@ -1,3 +1,76 @@
-// Place all the styles related to the homes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*======== Top ============*/
+article {
+  width: 100%;
+  height: calc(100vh - 5rem);
+  background: url(joshua-rawson-harris-YNaSz-E7Qss-unsplash.jpg) no-repeat
+    left 60% / cover;
+  position: relative;
+}
+
+#main-logo {
+  position: absolute;
+  right: 5%;
+  bottom: 15%;
+}
+/*button*/
+.btn-wrap {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+button.btn-flat {
+    overflow: hidden;
+    width: 15rem;
+    height: 4rem;
+    color: #fff;
+    border-radius: 0;
+    background: #000;
+    position: relative;
+    margin-top: 3rem;
+}
+
+.btn.btn-flat{
+  span {
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+  }
+  &:before {
+    position: absolute;
+    top: 0;
+    left: calc(-150% + 50px);
+    width: 170%;
+    height: 500%;
+    content: '';
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    -webkit-transform: rotate(45deg) translateX(0) translateY(0);
+    transform: rotate(45deg) translateX(0) translateY(0);
+    background: #ed882b;
+  }
+  &:after {
+    position: absolute;
+    top: -400%;
+    right: calc(-150% + 50px);
+    width: 170%;
+    height: 500%;
+    content: '';
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    -webkit-transform: rotate(45deg) translateX(0) translateY(0);
+    transform: rotate(45deg) translateX(0) translateY(0);
+    background: #ed882b;
+  }
+  &:hover:before {
+    -webkit-transform: rotate(45deg) translateX(0) translateY(-50%);
+    transform: rotate(45deg) translateX(0) translateY(-50%);
+  }
+  &:hover:after {
+    -webkit-transform: rotate(45deg) translateX(0) translateY(50%);
+    transform: rotate(45deg) translateX(0) translateY(50%);
+  }
+}
