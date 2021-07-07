@@ -17,6 +17,9 @@
     <%# 商品登録フォーム %>
     <%= form_with model: @product, local: true do |f| %>
       <div>
+        <%= f.label :image %>
+        <%= f.file_field :image %>
+      <div>
         <%= f.label :name %>
         <%= f.text_field :name, class: "form-control" %>
       </div>
