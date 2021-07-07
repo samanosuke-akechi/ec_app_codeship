@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
   root 'homes#top'
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
+  }
   resources :products
 end
