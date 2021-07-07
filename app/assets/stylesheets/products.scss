@@ -43,6 +43,14 @@
   padding: 2rem;
   display: flex;
   background:#fff;
+  .img {
+    width: 50%;
+    height: 80%;
+    margin-top: 2rem;
+    img {
+      width: 100%;
+    }
+  }
   .inner-text{
       padding: 2rem 3rem;
       width: 50%;

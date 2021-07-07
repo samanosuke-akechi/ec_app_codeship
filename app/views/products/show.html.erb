@@ -1,5 +1,8 @@
 <div class="contianer">
   <div class="detail-card">
+    <div class="img">
+      <%= image_tag @product.image.to_s %>
+    </div>
     <div class="inner-text">
       <div class="text">
         <h3><%= @product.name %></h3>

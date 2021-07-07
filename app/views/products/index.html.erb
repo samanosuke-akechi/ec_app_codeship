@@ -4,6 +4,9 @@
     <% @products.each do |product| %>
       <div class="card col-sm-3">
         <div class="card-body">
+          <div class="text-center my-3">
+            <%= image_tag product.image.to_s, size:"150x150" %>
+          </div>
           <h5 class="card-title"><%= product.name %></h5>
           <p class="card-text"><%= product.price %>円</p>
           <%= link_to '詳細へ', product_path(product), class: "product-detail-btn" %>
