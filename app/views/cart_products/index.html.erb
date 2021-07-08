@@ -48,7 +48,10 @@
       <div class="modal-body">
         <p class="cart-product">・商品A　400</p>
         <hr>
-        <p class="cart-product-total">合計金額 400</p>
+        <p class="cart-product-total">
+          商品合計：<%= @products.count %>個/
+          合計金額：<%= ptotal_price %>円
+        </p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-dark" data-dismiss="modal">閉じる</button>
