@@ -3,6 +3,7 @@ class CartProductsController < ApplicationController
     cart = current_user.cart || current_user.create_cart
     @products = current_user.cart.products  # ログインユーザーのカート内の商品情報を代入
     @total_price = @products.pluck(:price).sum()  # カート内の全商品の値段の合計を取得
+    @product_group = @products.group(:name).count
   end
   
   def create
