@@ -1,0 +1,31 @@
+<div class="container pt-5">
+  <div class="col-sm-8 offset-sm-2">
+    <h2 class="product-list-title">カート内商品一覧</h2>
+    <table class="table table-hover">
+      <tr>
+        <thead class="table-header">
+          <th>商品名</th>
+          <th>値段</th>
+          <td></td>
+        </thead>
+      </tr>
+      <% @products.each do |product| %>
+        <tr>
+          <tbody>
+            <td><%= product.name %></td>
+            <td><%= product.price %>円</td>
+            <td class="delete-button">
+              <%= link_to "削除する", "#", class: "btn btn-danger" %>
+            </td>
+          </tbody>
+        </tr>
+      <% end %>
+    </table>
+    <div class="cart-btn-wrap">
+      <button type="button" class="purchase-btn">
+        <i class="far fa-credit-card"></i>
+        <span>購入する</span>
+      </button>
+    </div>
+  </div>
+</div>
