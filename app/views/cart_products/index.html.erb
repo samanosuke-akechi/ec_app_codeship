@@ -46,7 +46,13 @@
         </button>
       </div>
       <div class="modal-body">
-        <p class="cart-product">・商品A　400</p>
+        <%= @product_group.each do |product_name, product_count| %>
+          <p class="cart-product">
+            <%= product_name %>
+            x
+            <%= product_count %>個
+          </p>
+        <% end %>
         <hr>
         <p class="cart-product-total">
           商品合計：<%= @products.count %>個/
