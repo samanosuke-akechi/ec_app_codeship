@@ -4,5 +4,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
-  resources :products
+  resources :products do
+    resources :cart_products, only: [:create]
+  end
 end
