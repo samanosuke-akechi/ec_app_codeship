@@ -22,8 +22,7 @@
       <% end %>
     </table>
     <div class="cart-btn-wrap">
-      <button type="button" class="purchase-btn" data-toggle="modal" data-target="#confirmModal">
-        <i class="far fa-credit-card"></i>
+      <button type="button" class="purchase-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
         <span>購入する</span>
       </button>
       <button type="button" class="purchase-btn">
@@ -36,17 +35,15 @@
 </div>
 
 <%# モーダルウィンドウ %>
-<div class="modal fade" id="confirmModal" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title text-white">購入詳細</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <h5 class="modal-title text-white">購入詳細</h5><%# Modal title %>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <%= @product_group.each do |product_name, product_count| %>
+      <div class="modal-body"><%# Modal内コンテンツ %>
+        <% @product_group.each do |product_name, product_count| %>
           <p class="cart-product">
             <%= product_name %>
             x
@@ -55,12 +52,12 @@
         <% end %>
         <hr>
         <p class="cart-product-total">
-          商品合計：<%= @products.count %>個/
+          商品合計：<%= @products.count %>個 /
           合計金額：<%= @total_price %>円
         </p>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-dark" data-dismiss="modal">閉じる</button>
+      <div class="modal-footer"><%# モーダル下部 %>
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">閉じる</button>
         <%= link_to "購入を確定する", "#", class: "btn btn-warning" %>
       </div>
     </div>
