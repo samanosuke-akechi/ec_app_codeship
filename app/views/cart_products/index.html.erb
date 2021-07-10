@@ -15,7 +15,10 @@
             <td><%= product.name %></td>
             <td><%= product.price %>円</td>
             <td class="delete-button">
-              <%= link_to "削除する", product_cart_products_path(product), method: :delete, class: "btn btn-danger" %>
+              <%= link_to product_cart_products_path(product), method: :delete, class: "btn btn-danger" do %>
+                <i class="fas fa-backspace"></i>
+                <span>削除する</span>
+              <% end %>
             </td>
           </tbody>
         </tr>
@@ -23,13 +26,13 @@
     </table>
     <div class="cart-btn-wrap">
       <button type="button" class="purchase-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <i class="fas fa-money-check-alt"></i>
         <span>購入する</span>
       </button>
-      <button type="button" class="purchase-btn">
-        <%= link_to products_path do %>
-          <span>買い物を続ける</span>
-        <% end %>
-      </button>
+      <%= link_to products_path, class: "purchase-btn" do %>
+        <i class="fas fa-store"></i>
+        <span>買い物を続ける</span>
+      <% end %>
     </div>
   </div>
 </div>
