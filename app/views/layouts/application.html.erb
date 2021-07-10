@@ -18,14 +18,44 @@
         <ul class="nav-items">
           <% if current_user %><%# current_userがnilかexistか %>
             <li>ようこそ、<%= current_user.name %>さん！</li>
-            <li><%= link_to "商品の登録", new_product_path %></li>
-            <li><%= link_to "商品を探す", products_path %></li>
-            <li><%= link_to "カート", cart_products_path %></li>
-            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+            <li>
+              <%= link_to new_product_path do %>
+                <i class="far fa-plus-square"></i>
+                <span>商品の登録</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to products_path do %>
+                <i class="fas fa-store"></i>
+                <span>商品を探す</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to cart_products_path do %>
+                <i class="fas fa-shopping-cart"></i>
+                <span>カート</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Log out</span>
+              <% end %>
+            </li>
           <% else %>
             <li>ようこそ、ゲストさん！</li>
-            <li><%= link_to "Log in", new_user_session_path %></li>
-            <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <li>
+              <%= link_to new_user_session_path do %>
+                <i class="fas fa-sign-in-alt"></i>
+                <span>Log in</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_user_registration_path do %>
+                <i class="fas fa-user-plus"></i>
+                <span>Sign up</span>
+              <% end %>
+            </li>
           <% end %>
         </ul>
       </nav>

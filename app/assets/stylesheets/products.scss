@@ -76,7 +76,7 @@
       align-items: center;
       flex-direction: column;
   }
-  button{
+  .add-to-cart-btn{
     display: block;
     overflow: hidden;
     width: 100%;;
@@ -88,6 +88,8 @@
     margin: 1rem auto 0;
     transition: 0.3s;
     font-weight: bold;
+    text-align: center;
+    line-height: 4rem;
     &:hover{
       transition: 0.3s;
       background: #ed882b;
