@@ -12,4 +12,12 @@ class CartProductsController < ApplicationController
     cart.cart_products.create(product_id: product.id)  # create_cartは、has_one関連づけをすると使用できるメソッドで、.create_<関連先>とすることでオブジェクトを生成できる。つまりこの場合はログインユーザーに紐づくカートが生成される（cartsテーブルにuser_idが保存される）。
     redirect_to cart_products_path, notice: "カートに追加しました"
   end
+
+  def destroy
+    cart = current_user.cart
+    product = Product.find(params[:product_id])
+    delete_product = cart.cart_products.find_by(product_id: product.id)
+    delete_product.destroy
+    redirect_to products_path, notice: "削除しました"
+  end
 end
