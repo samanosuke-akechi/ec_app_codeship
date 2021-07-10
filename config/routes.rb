@@ -9,5 +9,5 @@ Rails.application.routes.draw do
     resource :cart_products, only: [:destroy]
   end
   resources :cart_products, only: [:index]
-  get '/complete', to: 'homes"complete'
+  get '/complete', to: 'homes#complete'
 end
