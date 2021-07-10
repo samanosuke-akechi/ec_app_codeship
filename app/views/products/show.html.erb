@@ -11,7 +11,10 @@
       </div>
       <div class="btn">
         <button>
-          <%= link_to "買い物カゴに入れる", product_cart_products_path(@product), method: :post %>
+          <%= link_to product_cart_products_path(@product), method: :post do %>
+            <i class="fas fa-cart-plus"></i>
+            <span>買い物カゴに入れる</span>
+          <% end %>
         </button>
         <button><%= link_to "編集", edit_product_path %></button>
         <button><%= link_to "この商品を削除する", product_path, method: :delete, data: { confirm: '削除しますか？' } %></button>
