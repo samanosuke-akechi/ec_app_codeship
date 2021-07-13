@@ -18,12 +18,14 @@
         <ul class="nav-items">
           <% if current_user %><%# current_userがnilかexistか %>
             <li>ようこそ、<%= current_user.name %>さん！</li>
-            <li>
-              <%= link_to new_product_path do %>
-                <i class="far fa-plus-square"></i>
-                <span>商品の登録</span>
-              <% end %>
-            </li>
+            <% if current_user.admin %>  <%# 管理者なら「商品の登録」リンクを表示 %>
+              <li>
+                <%= link_to new_product_path do %>
+                  <i class="far fa-plus-square"></i>
+                  <span>商品の登録</span>
+                <% end %>
+              </li>
+            <% end %>
             <li>
               <%= link_to products_path do %>
                 <i class="fas fa-store"></i>
