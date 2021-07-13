@@ -14,11 +14,13 @@
           <i class="fas fa-cart-plus"></i>
           <span>買い物カゴに入れる</span>
         <% end %>
-        <%= link_to edit_product_path, class: "add-to-cart-btn" do %>
-          <span>編集</span>
-        <% end %>
-        <%= link_to product_path, method: :delete, data: { confirm: '削除しますか？' }, class: "add-to-cart-btn" do %>
-          <span>この商品を削除する</span>
+        <% if current_user.admin %>  <%# 管理者のみに表示させている %>
+          <%= link_to edit_product_path, class: "add-to-cart-btn" do %>
+            <span>編集</span>
+          <% end %>
+          <%= link_to product_path, method: :delete, data: { confirm: '削除しますか？' }, class: "add-to-cart-btn" do %>
+            <span>この商品を削除する</span>
+          <% end %>
         <% end %>
       </div>
     </div>
